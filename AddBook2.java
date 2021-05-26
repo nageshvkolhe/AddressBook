@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class AddBook2 {
 	 public static void main(String[] args) {
-		 
+		  
 		  Scanner sc = new Scanner(System.in);
 	      AddBook1 add[] = new AddBook1[10];
           int count = 0;
@@ -92,9 +92,33 @@ public class AddBook2 {
          	        	 }
          	        	 System.out.println("Details Updated");
          	        	 break;
-         	 }
-          }	 
-    while (choice!=0);
-	}
-}         
          	        	 
+         	       case	3:
+         	    	   System.out.println("Delete Details");
+         	    	   
+         	    	   System.out.println("Enter Phone Number of contact which you have to delete from AddressBook ");
+         	    	      phonenumber = sc.next();
+       	        	      for(int i = 0; i < count; i++) {
+       	        		     if(add[i] != null && add[i].getPhoneNumber() == phonenumber) {
+       	        			   add[i] = null;
+       	        		     }
+       	        	     }
+       	        	    System.out.println("Details Deleted Successfully");
+       	        	    break;
+       	        	    
+         	       case	4:
+         	    	   System.out.println("All Details");
+         	    	   
+       	        	      for(int i = 0; i < count; i++) {
+       	        	    	System.out.println(add[i]);
+       	        	      }
+       	        	      break;
+       	        	      
+       	            default :
+       	            	System.out.println("you entered invaild choice");
+         	        }
+          }	 
+         while (choice!=0);
+		}       	 
+	
+}
